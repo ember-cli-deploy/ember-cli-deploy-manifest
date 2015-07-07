@@ -74,7 +74,9 @@ describe('manifest plugin', function() {
           config: {
             manifest: {
               filePattern: '**/*.{js,css,png,gif,jpg,map,xml,txt,svg,eot,ttf,woff,woff2}',
-              manifestPath: 'manifest.txt'
+              manifestPath: 'manifest.txt',
+              distDir: function(context){ return context.distDir; },
+              distFiles: function(context){ return context.distFiles; }
             }
           }
         }

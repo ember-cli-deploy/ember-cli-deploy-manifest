@@ -43,6 +43,14 @@ module.exports = {
       return Promise.reject(error);
     }
 
+    function _resolveConfigValue(key, config, context) {
+      if (typeof config[key] === 'function') {
+        return config[key](context);
+      }
+
+      return config[key];
+    }
+
     return {
       name: options.name,
 
@@ -63,10 +71,10 @@ module.exports = {
         var ui         = deployment.ui;
         var config     = deployment.config[this.name] || {};
 
-        var filePattern  = config.filePattern;
-        var distDir      = context.distDir;
-        var distFiles    = context.distFiles || [];
-        var manifestPath = config.manifestPath;
+        var filePattern  = _resolveConfigValue('filePattern', config, context);
+        var distDir      = _resolveConfigValue('distDir', config, context);
+        var distFiles    = _resolveConfigValue('distFiles', config, context);
+        var manifestPath = _resolveConfigValue('manifestPath', config, context);
 
         return _beginMessage(ui, manifestPath)
           .then(function() {
