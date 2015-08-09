@@ -44,7 +44,7 @@ module.exports = {
           return Promise.reject(error);
         }
       }
-  });
+    });
     return new DeployPlugin();
   }
 };
