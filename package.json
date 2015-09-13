@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "node tests/runner.js"
   },
-  "repository": "https://github.com/lukemelia/ember-cli-deploy-manifest",
+  "repository": "https://github.com/ember-cli-deploy/ember-cli-deploy-manifest",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Luke Melia and ember-cli-deploy team",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
