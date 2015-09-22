@@ -43,7 +43,7 @@ When our deployment plugin is ready to deploy, it retrieves the old manifest (fr
 
 Files matching this pattern will be included in the manifest.
 
-_Default:_ `"**/*.{js,css,png,gif,jpg,map,xml,txt,svg,eot,ttf,woff,woff2}"`
+_Default:_ `"**/*.{js,css,png,gif,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}"`
 
 ### manifestPath
 
