@@ -112,7 +112,7 @@ describe('manifest plugin', function() {
         project: { name: function() { return 'test-project'; } },
         config: {
           manifest: {
-            filePattern: '**/*.{js,css,png,gif,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}',
+            filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}',
             manifestPath: 'manifest.txt',
             distDir: function(context){ return context.distDir; },
             distFiles: function(context){ return context.distFiles; }
