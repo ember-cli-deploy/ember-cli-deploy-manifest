@@ -31,13 +31,13 @@ module.exports = {
         var distFiles    = this.readConfig('distFiles');
         var manifestPath = this.readConfig('manifestPath');
 
-        this.log('generating manifest at `' + manifestPath + '`');
+        this.log('generating manifest at `' + manifestPath + '`', { verbose: true });
         try {
           var filesToInclude = distFiles.filter(minimatch.filter(filePattern, { matchBase: true }));
           filesToInclude.sort();
           var outputPath = path.join(distDir, manifestPath);
           fs.writeFileSync(outputPath, filesToInclude.join('\n'));
-          this.log('generated manifest including ' + filesToInclude.length + ' files ok');
+          this.log('generated manifest including ' + filesToInclude.length + ' files ok', { verbose: true });
           return { manifestPath: manifestPath };
         } catch (error) {
           this.log(error, { color: 'red' });
