@@ -1,16 +1,20 @@
+/*eslint-env node*/
 'use strict';
 
-var Promise = require('ember-cli/lib/ext/promise');
-var assert  = require('ember-cli/tests/helpers/assert');
+var RSVP = require('rsvp');
 var fs  = require('fs');
 var path  = require('path');
-var rimraf  = Promise.denodeify(require('rimraf'));
+var rimraf  = RSVP.denodeify(require('rimraf'));
+var chai  = require('chai');
+var chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
+var assert = chai.assert;
 
 describe('manifest plugin', function() {
   var subject, mockUi;
 
   beforeEach(function() {
-    subject = require('../../index');
+    subject = require('../index');
     mockUi = {
       verbose: true,
       messages: [],
@@ -144,8 +148,6 @@ describe('manifest plugin', function() {
         assert.deepEqual(result, { manifestPath: 'manifest.txt' });
         done();
       } catch(err) {
-        console.log(err);
-        console.log(err.stack);
         done(err);
       }
     });
