@@ -1,7 +1,7 @@
-/* jshint node: true */
+/*eslint-env node*/
 'use strict';
 
-var Promise   = require('ember-cli/lib/ext/promise');
+var RSVP      = require('rsvp');
 var fs        = require('fs');
 var path      = require('path');
 var minimatch = require('minimatch');
@@ -41,7 +41,7 @@ module.exports = {
           return { manifestPath: manifestPath };
         } catch (error) {
           this.log(error, { color: 'red' });
-          return Promise.reject(error);
+          return RSVP.reject(error);
         }
       }
     });
