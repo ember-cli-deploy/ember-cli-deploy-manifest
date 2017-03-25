@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.0.0-beta.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.0.0-beta.0) (2017-03-25)
+[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v0.1.2...v1.0.0-beta.0)
+
+**Merged pull requests:**
+
+- Update ember-cli and dependencies [\#17](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/17) ([lukemelia](https://github.com/lukemelia))
+- \[DOC\] update URLs to other plugin repos in README [\#16](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/16) ([lukemelia](https://github.com/lukemelia))
+
 ## [v0.1.2](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v0.1.2) (2017-02-21)
 [Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v0.1.1...v0.1.2)
 
