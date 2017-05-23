@@ -84,7 +84,7 @@ describe('manifest plugin', function() {
 
           return previous;
         }, []);
-        assert.equal(messages.length, 4);
+        assert.equal(messages.length, 5);
       });
 
       it('adds default config to the config object', function() {
@@ -93,6 +93,7 @@ describe('manifest plugin', function() {
         assert.isDefined(config.manifest.manifestPath);
         assert.isDefined(config.manifest.distDir);
         assert.isDefined(config.manifest.distFiles);
+        assert.isDefined(config.manifest.fileIgnorePattern);
       });
     });
   });
@@ -112,6 +113,7 @@ describe('manifest plugin', function() {
           'assets/foo-178d195608c0b18cf0ec5e982b39cad8.js',
           'assets/bar-da3d0fb7db52f8273550c11403df178f.css',
           'index.html',
+          'baz.txt',
         ],
         ui: mockUi,
         project: { name: function() { return 'test-project'; } },
@@ -130,6 +132,7 @@ describe('manifest plugin', function() {
       fs.writeFileSync(path.join(context.distDir, context.distFiles[0]), 'alert("Hello foo world!");', 'utf8');
       fs.writeFileSync(path.join(context.distDir, context.distFiles[1]), 'body { color: red; }', 'utf8');
       fs.writeFileSync(path.join(context.distDir, context.distFiles[2]), '<html>Hello world</html>', 'utf8');
+      fs.writeFileSync(path.join(context.distDir, context.distFiles[3]), 'Here are some notes.', 'utf8');
       plugin.beforeHook(context);
     });
 
@@ -138,6 +141,23 @@ describe('manifest plugin', function() {
     });
 
     it('includes the matching files in a manifest', function(done) {
+      var result = plugin.willUpload(context);
+      try {
+        var manifestContents = fs.readFileSync(path.join(context.distDir, 'manifest.txt'), { encoding: 'utf8' });
+        var lines = manifestContents.split("\n");
+        assert.equal(lines.length, 3);
+        assert.equal(lines[0], "assets/bar-da3d0fb7db52f8273550c11403df178f.css");
+        assert.equal(lines[1], "assets/foo-178d195608c0b18cf0ec5e982b39cad8.js");
+        assert.equal(lines[2], "baz.txt");
+        assert.deepEqual(result, { manifestPath: 'manifest.txt' });
+        done();
+      } catch(err) {
+        done(err);
+      }
+    });
+
+    it('excludes files matching the fileIgnorePattern from the manifest', function(done) {
+      context.config.manifest.fileIgnorePattern = 'baz.txt'
       var result = plugin.willUpload(context);
       try {
         var manifestContents = fs.readFileSync(path.join(context.distDir, 'manifest.txt'), { encoding: 'utf8' });
