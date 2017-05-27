@@ -1,9 +1,14 @@
 # Change Log
 
-## [v1.0.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.0.0) (2017-03-25)
-[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v1.0.0-beta.0...v1.0.0)
+## [v1.1.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.1.0) (2017-05-27)
+[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v1.0.0...v1.1.0)
 
-No changes from 1.0.0-beta.0
+**Merged pull requests:**
+
+- add ignoreFilePattern config option [\#19](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/19) ([stephencattaneo](https://github.com/stephencattaneo))
+
+## [v1.0.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.0.0) (2017-04-06)
+[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v1.0.0-beta.0...v1.0.0)
 
 ## [v1.0.0-beta.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.0.0-beta.0) (2017-03-25)
 [Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v0.1.2...v1.0.0-beta.0)
