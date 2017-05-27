@@ -16,6 +16,7 @@ module.exports = {
       name: options.name,
       defaultConfig: {
         filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}',
+        fileIgnorePattern: null,
         manifestPath: 'manifest.txt',
         distDir: function(context) {
           return context.distDir;
@@ -26,14 +27,20 @@ module.exports = {
       },
 
       willUpload: function(/* context */) {
-        var filePattern  = this.readConfig('filePattern');
-        var distDir      = this.readConfig('distDir');
-        var distFiles    = this.readConfig('distFiles');
-        var manifestPath = this.readConfig('manifestPath');
+        var filePattern       = this.readConfig('filePattern');
+        var distDir           = this.readConfig('distDir');
+        var distFiles         = this.readConfig('distFiles');
+        var manifestPath      = this.readConfig('manifestPath');
+        var fileIgnorePattern = this.readConfig('fileIgnorePattern');
 
         this.log('generating manifest at `' + manifestPath + '`', { verbose: true });
         try {
           var filesToInclude = distFiles.filter(minimatch.filter(filePattern, { matchBase: true }));
+          if (fileIgnorePattern != null) {
+            filesToInclude = filesToInclude.filter(function(path) {
+              return !minimatch(path, fileIgnorePattern, { matchBase: true });
+            });
+          }
           filesToInclude.sort();
           var outputPath = path.join(distDir, manifestPath);
           fs.writeFileSync(outputPath, filesToInclude.join('\n'));
