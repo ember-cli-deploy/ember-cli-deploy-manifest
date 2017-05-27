@@ -49,7 +49,7 @@ _Default:_ `"**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2
 
 ### ignoreFilePattern
 
-Files matching this pattern will _not_ be gzipped even if they match filePattern.
+Files matching this pattern will _not_ be included in the manifest even if they match filePattern.
 
 _Default:_ `null`
 
