@@ -40,6 +40,7 @@ When our deployment plugin is ready to deploy, it retrieves the old manifest (fr
 * `willUpload`
 
 ## Configuration Options
+In `config/environment.js` under `ENV['manifest']`
 
 ### filePattern
 
