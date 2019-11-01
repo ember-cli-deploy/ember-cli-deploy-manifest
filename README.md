@@ -41,6 +41,13 @@ When our deployment plugin is ready to deploy, it retrieves the old manifest (fr
 
 ## Configuration Options
 
+Place the following configuration options into `config/deploy.js`, such as:
+```
+ENV.manifest = {
+  fileIgnorePattern: 'robots.txt'
+}
+```
+
 ### filePattern
 
 Files matching this pattern will be included in the manifest.
