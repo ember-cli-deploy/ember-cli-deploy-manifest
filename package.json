@@ -7,34 +7,50 @@
     "test": "tests"
   },
   "scripts": {
+    "release": "release-it",
     "test": "node tests/runner.js && ./node_modules/.bin/eslint index.js tests/**/*.js"
   },
   "repository": "https://github.com/ember-cli-deploy/ember-cli-deploy-manifest",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 10.*"
   },
   "author": "Luke Melia and ember-cli-deploy team",
   "license": "MIT",
   "devDependencies": {
-    "chai-as-promised": "^6.0.0",
-    "chai": "^3.5.0",
-    "ember-cli-release": "^1.0.0-beta.2",
-    "ember-cli": "^2.12.0",
-    "eslint": "^3.18.0",
-    "glob": "^7.1.1",
-    "mocha": "^3.2.0",
-    "rimraf": "^2.3.4"
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "ember-cli": "^3.22.0",
+    "ember-cli-deploy-plugin": "^0.2.2",
+    "eslint": "^7.14.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^2.3.0",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "chalk": "^1.0.0",
-    "core-object": "^2.0.0",
-    "ember-cli-deploy-plugin": "^0.2.3",
-    "minimatch": "^3.0.3",
-    "rsvp": "^3.5.0"
+    "chalk": "^4.1.0",
+    "core-object": "^3.1.5",
+    "minimatch": "^3.0.4",
+    "rsvp": "^4.8.5"
   },
   "keywords": [
     "ember-addon",
     "ember-cli-deploy-plugin"
   ],
-  "ember-addon": {}
+  "ember-addon": {},
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": false
+      }
+    },
+    "git": {
+      "requireCleanWorkingDir": false
+    },
+    "github": {
+      "release": true
+    }
+  }
 }
