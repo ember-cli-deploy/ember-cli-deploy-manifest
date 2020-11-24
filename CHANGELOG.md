@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.0.0 (2020-11-24)
+
+#### :rocket: Enhancement
+* [#25](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/25) Add json to default list of file extensions to include in the manifest ([@lukemelia](https://github.com/lukemelia))
+* [#26](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/26) Update dependencies ([@lukemelia](https://github.com/lukemelia))
+
+#### Committers: 2
+- Luke Melia ([@lukemelia](https://github.com/lukemelia))
+- Vali Aminov ([@bortevik](https://github.com/bortevik))
+
 ## [v1.1.0](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/tree/v1.1.0) (2017-05-27)
 [Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/compare/v1.0.0...v1.1.0)
 
