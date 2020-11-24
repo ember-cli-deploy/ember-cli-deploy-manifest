@@ -39,6 +39,9 @@
     "ember-cli-deploy-plugin"
   ],
   "ember-addon": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "release-it": {
     "plugins": {
       "release-it-lerna-changelog": {
