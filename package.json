@@ -25,7 +25,7 @@
     "glob": "^7.1.6",
     "mocha": "^8.2.1",
     "release-it": "^14.2.1",
-    "release-it-lerna-changelog": "^2.3.0",
+    "release-it-lerna-changelog": "^3.1.0",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
