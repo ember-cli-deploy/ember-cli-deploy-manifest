@@ -1,5 +1,17 @@
 # Change Log
 
+Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.
+Deprecated as of 10.7.0. Please use highlight(code, options) instead.
+https://github.com/highlightjs/highlight.js/issues/2277
+
+## 3.0.0 (2023-06-04)
+
+#### :boom: Breaking Change
+* [#51](https://github.com/ember-cli-deploy/ember-cli-deploy-manifest/pull/51) [BREAKING] Update dependencies and required node versions ([@lukemelia](https://github.com/lukemelia))
+
+#### Committers: 1
+- Luke Melia ([@lukemelia](https://github.com/lukemelia))
+
 ## 2.0.0 (2020-11-24)
 
 #### :rocket: Enhancement
